@@ -24,12 +24,12 @@ public class MyBinarySearchTree<K extends Comparable<K>> {
     }
 
     public void size() {
-        int outputSize = sizeRecursive(root);//3
+        int outputSize = sizeRecursive(root);
         System.out.println("Size is " + outputSize);
 
     }
 
-    private Integer sizeRecursive(MyBinaryNode<K> root) { //int
+    private Integer sizeRecursive(MyBinaryNode<K> root) {
         Integer value;
         if (root == null) {
             value = 0;
@@ -38,6 +38,26 @@ public class MyBinarySearchTree<K extends Comparable<K>> {
         }
         return value;
     }
+    public void search(K data) {
+        MyBinaryNode Output = searchRecursively(root,data);
+        System.out.println("Found" +Output);
+    }
+
+
+    public MyBinaryNode searchRecursively(MyBinaryNode<K> temp, K key) {
+
+        if (temp == null || temp.key == key)
+            return temp;
+
+        if (key.compareTo(temp.key) < 0)
+            return searchRecursively(temp.left, key);
+
+        if (key.compareTo(temp.key) > 0)
+            return searchRecursively(temp.right, key);
+
+        return temp;
+    }
+
 
 
 }
