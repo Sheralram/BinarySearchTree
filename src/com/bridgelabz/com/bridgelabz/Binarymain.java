@@ -17,6 +17,7 @@ public class Binarymain {
         myBinaryTree.add(65);
         myBinaryTree.add(63);
         myBinaryTree.add(67);
+        myBinaryTree.size();
 
 
     }
